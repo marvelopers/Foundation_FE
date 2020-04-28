@@ -32,6 +32,9 @@ JS 문법
 
 JS출력
 1.window.alert() 메소드
+가장 간단하게 데이터를 출력할 수 있는 방법.
+브라우저와는 별도의 대화상자를 띄워 데이터를 전달.
+
 <pre>
 <code>
 
@@ -43,5 +46,30 @@ function alertDialogBox(){
     alert("확인 버튼을 누르면 다음 작업이 가능합니다.");
 }
 ```
+
+2. HTML DOM요소를 이용한  innerHTML 프로퍼티
+
+document객체의 getElementById()나 getElementByTagName()등의 메소드를 통해 HTML 요소를 사용한다.
+
+```
+const str = document.getElementById("text");
+str.innerHTML = "문장을 변경합니다." 
+
+```
+3. decument.write()메소드
+
+document.write()메소드는 웹 페이지가 로딩될 때 실행됨.
+웹 페이지에 가장 먼저 데이터를 출력, 테스트나 디버깅을 위해서 사용.
+
+웹 페이지에 모든 내용이 로딩된 후에 document.write()메소드가 실행될 경우, 
+페이지 내에 먼저 로딩된 모든 데이터를 지우고 자신의 데이터를 출력함.
+
+```
+document.write(4*5);
+```
+
+
+
+
 
 
