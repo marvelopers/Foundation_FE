@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>web form</title>
+    <style>
+        .subm{
+            display: block;
+            background-color: #fff;
+            border:1px solid #dedede;
+            cursor: pointer;
+            padding: 5px 10px 6px 7px;
+        }
+        .subm{
+            border: 0;
+            padding:0;
+            width: 60px;
+            height:60px;
+        }
+        .subm:hover{
+            background-color: #e6efc2;
+            border:1px solid #c6d880;
+            color:#529215;
+        }
+    </style>    
+</head>
+<body>
+    <audio src ="00_old_pop.mp3" autoplay controls>
+        Your browser does not support the audio element.
+    </audio>
+    <form>
+        <button type ="submit" class ="subm" onclick="alert('안녕하세요?')">전송하기</button>
+    </form>        
+
+    <fieldset>
+        <legend>인적사항 입력</legend>
+        이름 : <input type = "text"><br>
+        전화번호 : <input type = "text"><br>
+        주소 : <input type= "text"><br>
+    </fieldset>
+    
+</body>
+</html>
