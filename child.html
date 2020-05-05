@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>child 선택자</title>
+    <style>
+        @font-face {
+            font-family: "vara Serif Bold";
+            src: url("http://developer.mozilla.org/@api/deki/files/2934/=VeraSeBd.ttf");
+            
+        }
+        body { font-family: "Vera Serif Bold", serif }
+        p.poet {text-align: justify;}
+        /* 아이디는 #를 사용, child 선택자는 직계 자식에게만 적용,*/
+        #header > h1{color: red;}
+        #section > h1{color: blue;}
+        #header h1{color:red;}
+		#section h1{color:blue;}
+
+        li{list-style:none;}/*li의 검은점 제거*/
+			li:first-child{color:red;} /*:이 붙어있으면 가상클래스라고 한다*/
+			li:last-child{color:blue;}
+
+        body em{color: aqua;}
+        body > h1{color:blue;}
+    </style>
+</head>
+<body>
+    <h1>This headline is <em>very improtant</em>.</h1>
+    <div id="header">
+        <h2>Seletor Basic</h2>
+        <!-- header 안에 있는 직계 자식 -->
+        <div id="nav">
+            <h2>Navigation</h2>
+            <!-- header안에 있으나, nav라는 부모가 있으므로 직계가 아님 -->
+        </div>
+        <div id="nav1">
+            <h1>Navigation</h1>
+        </div>
+        <div id="section">
+            <h3 class="title">Selector</h3>
+            <p>Basic</p>
+        </div>
+    </div>
+
+    <div style="height:20px; background-color:yellow"></div>
+    <div style="height:20px; background-color:green"></div>
+    <div style="height:20px; background-color:purple"></div>
+
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+    </ul>
+
+    <div style="border:3px solid salmon;">
+        <h3>사자</h3>
+        <p>
+            사자는 아프리카에 사는 동물입니다. <span style="color : red">동물의 왕</span>으로 불립니다.
+        </p>
+    </div>
+    <p class="poet">
+        삶이 그대를 속일지라도 슬퍼하거나 노여워하지 말라, 
+        우울한 날을 견디면
+        믿으라,
+        기쁨의 날이 오리니
+        마음은 미래에 사는 것, 
+        지나가는 것이니,
+        그리고 지나가는 것은 훗날 소중하게 되리니
+    </p>
+    <p><em>푸시킨의 시 중</em></p>
+</body>
+</html>

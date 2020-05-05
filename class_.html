@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>css를 사용한 하위 클래스 정의</title>
+    <style>
+        h1{background-color:#6495ed;}
+        p.a{background-color: #ff0000;}
+        p.b{background-color: #00ff00;}
+        p.c{background-color: #0000ff; color: black;}
+        p.d{background-color: #888888;}
+
+        .box h2{color: red;}
+        .span{color: gray;}
+        .box .span_blue{color:blue;}
+        .span_green{color:green;}
+        /*class : . 으로 id : #으로 */
+    </style>
+</head>
+<body>
+    <h1>CSS color Chart</h1>
+    <p class="a"> Color#1</p>
+    <p class="b"> Color#2</p>
+    <p class="c"> Color#3</p>
+    <p class="d"> Color#4</p>
+
+    <div class="box">
+        <h2><span>클래스</span> 연습</h2>
+        <div class="box">
+            <h3><span class="span_blue">클래스</span>연습</h3>
+        </div>
+    </div>
+    <div>
+        <h3>클래스<span class="span_green">연습</span></h3>
+    </div>
+    <h3 id="aa">아이디 연습</h3>
+
+</body>
+</html>
