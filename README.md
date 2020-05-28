@@ -1,7 +1,9 @@
 # JavaScript
 
 ## 1.JavaScript
-객체(object) 기반의 스크립트 언어 
+객체(object) 기반의 스크립트 언어, 구문은 Java 및 C언어를 기반으로 한다.
+대부분의 프로그래밍 언어와 달리 입출력 개념이 없음!! 
+객체프로토 타입을 사용한 객체 지향 프로그래밍 + 함수형 프로그래밍 지원.
 주로 웹 브라우저에 사용되나, Node.js와 같은 프레임 워크를 사용하면 서버 프로그래밍도 가능
 HTML의 내용, 속성, 스타일을 변경할 수 있음.
 
@@ -110,10 +112,11 @@ HTML코드와 자바스크립트 코드를 읽기도 편해지고 유지보수�
 여러가지 형태의 타입을 미리 정의하여 제공하고 있으며, 이것을 기본 타입이라고 함.
 자바스크립트의 기본 타입은 원시 타입과 객체 타입으로 구분.
 
-원시타입 : 숫자(number), 문자열(string), 불리언(boolean), 심볼(symbol), undefined
+원시타입 : 숫자(number), 문자열(string), 불리언(boolean), 심볼(symbol), null,undefined
 
 객체 타입 : 객체(Object)는 자바스크립트의 기본 타입, 
 여러 프로퍼티나 메소드를 같은 이름으로 묶어놓은 일종의 집합체
+- 함수(Function), 배열(Array), 날짜(Date), 정규식(RegExp)    
 ```
 const num = 10;
 const myName = "김서현"
@@ -232,6 +235,7 @@ const arr = [element1, element2];
 배열의 참조 
 
 # JavaScript
-## JavaScript 
+
+## JavaScript_base
 # HTML
 # CSS
