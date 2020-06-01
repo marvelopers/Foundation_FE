@@ -7,3 +7,5 @@
 - 자바스크립트는 프로토타입 기반의 언어로 class 구문이 없다. 대신, Function을 class로 사용한다. 
 
 ## 클로저 Closure
+
+#  JavaScript Dom 접근하는 방식 정리
