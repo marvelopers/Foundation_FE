@@ -234,9 +234,17 @@ const arr = [element1, element2];
 
 배열의 참조 
 
-arrow 함수 
+### arrow 함수 
 1. 매개변수가 하나인 경우 () 생략 가능
 2. 함수의  body가 한줄이라면, {} return 생략 가능
+```
+
+const f1=(name)=>{
+    return `Hello, ${name}`;
+};
+//매개변수가 하나인 경우
+const f2 = name => `Hello, ${name}`;
+```
 
 
 # JavaScript
