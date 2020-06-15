@@ -1,0 +1,126 @@
+<!Doctype HTML>
+<HTML>
+    <head>
+        <meta charset="utf-8">
+        <title>jquery contents</title>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <style>
+            .span_bg{
+                background-color: darkcyan;
+            }
+            .div_bg{
+                background-color: darkgoldenrod;
+            }
+            .box{
+                display: inline-block;
+                margin-top: 10px;
+                width: 50px;
+                height: 50px;
+                background-color:darksalmon;
+            }
+        </style>
+    </head>
+    <body>
+        <!--
+        DOM요소의 컨텐츠를 제어하는 메소드
+        
+        html(): 태그를 포함한 대상 안의 컨텐츠를 읽어들인다.
+        text(): 태그 안의 텍스트 컨텐츠를 읽어들인다.
+        html("태그문자열"): 괄호의 입력한 태그로 교체한다.
+        text("수정할 텍스트") : 괄호에 입력한 텍스트로 교체한다.
+         
+        prepend(): 선택 대상의 첫번째 자식 요소로 추가한다.
+        append(): 선택 대상의 마지막 자식 요소로 추가한다.**
+
+        before(): 선택 대상 앞에 내용을 추가한다.
+        after(): 선택 대상 뒤에 내용을 추가한다.
+        -->
+        
+        <p>
+            <span class="span_bg"> jQuery</span>
+        </p>
+        
+        <button type="button" class="click">click</button>
+        
+        <ul>
+            <li>list1</li>
+            <li>list2</li>
+            <li>list3</li>
+        </ul>
+        
+        <button id="prepend" onclick="prependEvent('prepend');">prepend</button>
+        <button id="append" onclick="appendEvent('append');">append</button>
+        
+        <br/><br/>
+        
+        <button id="before" onclick="beforeEvent()">Before</button>         <br/>
+        
+        <div class="box"><div>
+                
+        <script>
+            var tag = $("p");
+            var child_tag=$("p span");
+            
+            var html = tag.html();
+            var text = tag.text();
+            var child_text = child_tag.text();
+            
+            console.log(html);
+            console.log(text);
+            console.log(child_text);
+            
+            //span태그가 안의 텍스트가 현재 "JQUERY"라면 "HTML"글자로 변경하기.
+//            
+//            if(child_text==="jQuery"){
+//                tag.text("HTML");
+//                child_tag.text("HTML");
+//                $("span").text("HTML");
+//            }else{
+//                tag.text("jQuery");
+//                child_tag.text("jQuery");
+//                $(".span_bg").text("jQuery");
+//            }              
+            
+            
+            //function을 사용해서 li prepend append 추가
+            //button tag의 onclick이벤트 = 함수(파라미터)return 실행문
+        
+            var list_container = $("ul");
+            
+            
+            function prependEvent(txt){
+                const new_tag = "<li>"+txt+"</li>";
+                list_container.prepend(new_tag);
+            }
+            
+            function appendEvent(txt){
+                const new_tag = "<li>"+txt+"</li>"
+                list_container.append(new_tag);
+            }
+            
+            //배열 함수 before
+            
+            const color=["coral","darkgreen","grey"];
+            var box=$(".box");
+            
+                        
+            function beforeEvent(){
+                box.before("<div class='box'><div>")
+            }
+            
+            list_container.before("<div>ABCD</div>");
+            list_container.after("<div>ZYJK</div>");
+
+            //P태그 안에 내용을 교체해주기
+            
+             $("button.click").click(
+                function(){
+
+                    //html("태그문자열");
+                    //hml("<div>안녕</div>");
+                    const new_tag="<div class='div_bg'>new tag</div>";
+                    $("p").html(new_tag);
+            });            
+        </script>
+    </body>
+</HTML>

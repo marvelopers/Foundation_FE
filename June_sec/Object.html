@@ -1,0 +1,112 @@
+<!--OOP-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Odject-Oriented programming</title>
+    </head>
+    <body>
+        
+        <!--
+            기능단위로 함수를 단순히 집합시켜둔  상태와는 다르다.
+            관계성을 지닌 객체들의 집합
+            하나의 객체가 이후 전개되는 처리내용을 다른 객체에 일임할 수도 있고, 
+            동시에 별개의 역할을 하는 독립성을 지닐 수도 있다.
+        -->
+        <script>
+            //객체지향 : 나만의 비유 방법을 찾는 것이 중요해
+            //함수는 관계성을 맺을 수 없으나 객체지향은 객체들간의 의존성을 가지고 설계를 한다.
+            //function형 프로그래밍__
+            
+            //js 기본 객체 Date
+            let today = new Date(); //new를 붙인 후에 함수를 호출 (new 함수명();) 생성자 함수 호출
+            console.log(today);
+            
+            //Date(year,monthIndex, day, hour, minute, seconds, ms);
+            let date = new Date(2020,01,01,1,1,0);
+            console.log(date);
+            
+            //메소드 사용해보기
+            //메소드 : 객체 안에서 기능 단위로 이용되는 것
+            
+            let year=today.getFullYear(); //date객체 안에 getFullYear 메소드 사용
+            console.log(year);
+            
+            let month = today.getMonth()+1;//국제시간, 프로그래밍에서 시간을 다루는 방식에 따라 +1해야합니당당
+            console.log(month);
+            
+            let day = today.getDate();
+            console.log(day);
+            
+            let hour = today.getHours();
+            console.log(hour);
+            
+            let min = today.getMinutes();
+            console.log(min);
+            
+            let sec = today.getSeconds();
+            console.log(sec);
+            
+            let ms = today.getMilliseconds();
+            console.log(ms);
+            
+            //user 객체를 반환하는 함수
+            
+            function MakeUserNameTxt(name){
+                let user = {
+                    name : name,
+                    getName : function(){
+                        return this.name+"님 안녕하세요!"
+                    }
+                }
+                return user;
+            }
+            
+            //MakeUserNameTxt called
+            
+            let result = MakeUserNameTxt("10월");
+            console.log(result);
+            
+            console.log(result.getName());
+            
+            
+            // 매개변수로 휴대폰번호를 받으세용.
+            //1차적으로 객체 반환
+            
+            function MakeUserPhoneText(name, phone){
+                let user = {
+                    name : name,
+                    phone : phone,
+                    phone : phone.replace(/-/gi,"");//gi 일괄변경
+                    getPhone : function(){
+                        return (this.phone).replace(/-/gi,""); //gi 일괄변경
+                    }
+                }
+                return user;
+            }
+            let number = MakeUserPhoneText("김서현","010-8860-5035");
+            
+            console.log(number);
+            console.log(number.getPhone());
+            
+            //010-1111-1111 ----> 01011111111
+            //이렇게 변경합니당.
+            //JS 기본기능 메서드
+            //replace();
+            
+            
+            ////////////////////////////
+            //생성자 표준 문법에 맞는 함수//
+            //객체를 생성해주는 객체지향적 표준 방법으로 변환
+            
+            function Test(phone){
+                this.phone = phone;
+                this.getPhone = function(){
+                    return this.phone.replace(/-/gi,"");
+                }
+            }
+            //생성자 함수명은 대문자로 작성한다.
+            
+        </script>
+    </body>
+</html>
