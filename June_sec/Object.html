@@ -77,7 +77,7 @@
                 let user = {
                     name : name,
                     phone : phone,
-                    phone : phone.replace(/-/gi,"");//gi 일괄변경
+                    phone : phone.replace(/-/gi,""),//gi 일괄변경
                     getPhone : function(){
                         return (this.phone).replace(/-/gi,""); //gi 일괄변경
                     }
@@ -92,20 +92,54 @@
             //010-1111-1111 ----> 01011111111
             //이렇게 변경합니당.
             //JS 기본기능 메서드
+            
             //replace();
             
             
             ////////////////////////////
             //생성자 표준 문법에 맞는 함수//
             //객체를 생성해주는 객체지향적 표준 방법으로 변환
+            //호풀해서 사용할 때도 new 생성자함수명(인자);
             
             function Test(phone){
                 this.phone = phone;
                 this.getPhone = function(){
                     return this.phone.replace(/-/gi,"");
-                }
+                };
             }
             //생성자 함수명은 대문자로 작성한다.
+            
+            console.log("new 키워드로 생성자함수 호출 : ", new Test("010-1345-5565"));
+        
+            console.log(new Test("010-1111-1111").getPhone);
+            console.log(new Test("010-1111-1111").phone);            
+            
+            
+            ////////////////////////////
+            //정수형 숫자를 인자로 받는 생성자 함수
+            //getAddition() 메소드 : 인자로 받은 숫자, 인자로 받은 숫자
+            
+            function Clac(number){
+                this.number = number;
+                this.getAddition = function(){    
+                    return this.number+this.number;
+                },
+                this.getMultiplication = function(){
+                    return this.number*this.number; 
+                }
+            };
+            
+            var c = new Clac(5);
+            
+            var addition = c.getAddition();
+            var multiplication = c.getMultiplication();
+            
+            console.log(addition);
+            console.log(multiplication);
+            
+            
+            //설계 
+            
             
         </script>
     </body>
