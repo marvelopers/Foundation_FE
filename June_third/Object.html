@@ -1,0 +1,47 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Object</title>
+    </head>
+    <body>
+        <script>
+            
+            //문제1)
+            //뺄셈을 수행하는 생성자 정의
+            //인자 2개 
+            //두번째 인자 - 첫번째 인자
+            //프로토 타입을 통해서 메소드를 추가
+
+            function mirus(a,b){
+                this.a=a;
+                this.b=b; 
+            }
+
+            let mr = new mirus(3,3);
+
+            mr.prototype.mirus = function(){
+                return this.b-this.a;
+            };
+
+            //문제2)
+            //고객이 구매한 총 금액이 인자로 넘어온다.
+            //무료배송 이벤트 대상인지 판별 
+            //20만원 이상은 무료배송 미만은 해당 없음
+            // return boolean 
+            //
+
+            function FreeShippingEvent(price){
+                this.price = price;
+                this.tf = function(){
+                    return (this.price>=20) ? ture : false;
+                }
+            }
+
+            let evnet = new FreeShippingEvent(10000);
+            let result_txt = "구매금액은" +event.price+ "원이며, 무료배송 이벤트 대상여부는" +event.tf+"입니다."
+            
+            console.log(result_txt);
+        </script>
+    </body>
+</html>
