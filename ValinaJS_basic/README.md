@@ -160,3 +160,101 @@ element.classList.toggle(class, true|false)
 return A boolean 
 : 지정된 클래스가 있다면, 지정된 클래스를 요소에서 제거하고 false를 반환한다. 반대로 지정된 클래스가 없다면 추가하고ture를 반환한다.
 선택적인 두 번째 매개변수는 클래스가 이미 존재하는지 여부에 관계없이 클래스를 추가하거나 제거하도록 하는 boolean값이다. 
+
+
+## JavaScript_내장함수
+
+### for Each
+배열 안에 있는 모든 원소 출력 가능
+
+```
+const super = ['A','B','C','D'];
+super.forEach(text=>{
+	console.log(text);
+})
+```
+
+### map
+배열 안의 원소를 변환하여 새로운 배열 생성
+```
+const arr =[1,2,3,4];
+
+const square = n=> n*n;
+const squared = arr.map(square);
+```
+
+### indexOf
+원하는 항목이 몇 번째 원소인지 찾아주는 함수 (값이 숫자, 문자열, 불리언일 경우 사용)
+```
+const superheroes = ['아이언맨', '캡틴 아메리카', '토르', '닥터 스트레인지'];
+const index = superheroes.indexOf('토르');
+```
+
+### findIndex
+배열안에 있는 값이 객체나 배열일 때 사용
+```
+const index = todos.findIndex(todo => todo.id === 3);
+```
+
+### find
+찾아낸 값을 반환
+```
+const todo = todos.find(todo => todo.id === 3);
+```
+
+
+### filter
+특정 조건을 만족하는 값들만 따로 추출하여 새로운 배열생성
+```
+const tasksNotDone = todos.filter(todo => todo.done === false);
+```
+
+### splice
+배열에서 특정 항목을 제거할 경우 사용(기존 배열 변형)
+```
+const numbers = [10, 20, 30, 40];
+const index = numbers.indexOf(30);
+numbers.splice(index, 1);
+```
+
+### slice
+배열을 잘라냄, 기존 배열 변형 없음
+```
+const sliced = numbers.slice(0, 2); // 0부터 시작해서 2전까지
+```
+
+### shift, unshift
+shift :  첫번째 원소를 배열에서 추출해줍니다.
+unshift : 배열의 맨 앞에 새 원소를 추가합니다.
+
+### push, pop
+push: 배열의 맨 마지막에 새 항목 추가
+pop: 맨 마지막 항목을 추출
+
+### concat
+```
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const concated = arr1.concat(arr2);
+
+console.log(concated);
+```
+
+### join
+```
+const array = [1, 2, 3, 4, 5];
+console.log(array.join()); // 1,2,3,4,5
+console.log(array.join(' ')); // 1 2 3 4 5
+console.log(array.join(', ')); // 1, 2, 3, 4, 5
+```
+
+### reduce
+```
+const numbers = [1, 2, 3, 4, 5];
+let sum = numbers.reduce((accumulator, current) => {
+  console.log({ accumulator, current });
+  return accumulator + current;
+}, 0);
+
+console.log(sum);
+```
