@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    var result = (function () {
+
+      var url = window.location.href;
+      var hashValue = window.location.hash;
+      var prefix = url.indexOf('_mobile') > 0 ? '/hospital/fitpetfind_mobile' : '/hospital/fitpetfind';
+      return hashValue === '#/list' ? prefix : prefix + '/' + hashValue
+
+    })();
+
+
+    console.log('result:', result);
+
+  </script>
+</head>
+
+<body>
+  12312312
+</body>
+
+</html>

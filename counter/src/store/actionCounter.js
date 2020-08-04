@@ -20,3 +20,4 @@ export default function counterReducer(state = status, action) {
     default: return state;
   }
 }
+getDataRequestAction
