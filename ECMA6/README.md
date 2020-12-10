@@ -14,3 +14,8 @@
   - Map, Set, WeakMap, WeakSet
 
 ###
+
+- let : 블록 스코프를 가진 변수
+- const : 상수
+
+let vs var : for 문 작성 시 let만 스코프를 가짐
