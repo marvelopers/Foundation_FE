@@ -1,0 +1,100 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Prototype</title>
+    </head>
+    <body>
+        <div>프로토타입</div>
+        
+        <div>Prototype객체는 함수가 정의되는 순간 자동으로 생성</div>
+        <div>Prototype객체에 다른 속성이나 객체를 추가할 수 있다.</div>
+        <div>함수 정의와 함께 생성되는 빈 Object</div>
+
+        <script>
+            //인자로 받은 두개의 값을 더해주는 기능의 함수
+            function Addition(a,b){
+                this.a = a;
+                this.b = b;
+                //덧셈 메소드
+                
+            }
+            
+            //객체 생성 (할당)
+            let result1 = new Addition(3,3);
+            let result2 = new Addition(10,555);
+            
+            console.log(result1);
+            console.log(result2);
+            
+            //덧셈 기능을 수행하는 add메소드를 추가한다. 
+            Addition.prototype.add = function(){
+                return this.a + this.b;
+            }
+            
+            //메소드가 잘 추가되었는지 확인하는 방법
+            console.log(result1.add());
+            console.log(result2.add());        
+            
+            //곱셈 기능을 수행하는 Hello메소드 추가한다.
+            Addition.prototype.Hello = function(){
+                return this.a*this.b;
+            } 
+            
+            console.log("Hello",result1.Hello());
+            console.log("Hello",result2.Hello());
+            
+            console.log(result1.constructor);
+            
+            
+            ////////////////////////////////////
+            
+            
+            //뺄셈을 수행하는 생성자의 정의 인자 2개
+            //두번째 인자 - 첫번째 인자
+            //프로토타입을 통해서 메소드를 추가
+            
+            function Minus(a,b){
+                this.a = a;
+                this.b = b;
+            }
+            
+            var m = new Minus(5,10);
+            
+            Minus.prototype.minus = function(){
+                return this.b-this.a
+            };
+            
+            console.log(m.minus());
+            
+            
+            
+            //////////////////////////////////////
+            
+            
+            //고객이 구매한 총 금액이 인자로 넘어온다.
+            //무료배송 이벤트 대상자인지 판별.(20만원 이상 금액)
+            
+            function FreeShipping(number){
+                this.number = number;
+                this.getCustomer = function(){
+                    if(this.number>=200000){
+                        return "고객님의 구매금액은 "+this.number+"원 이며 무료배송 이벤트 대상자입니다.";
+                    }
+                        return "고객님의 구매금액은 "+this.number+"원 이며 배송비 2500원이 부과됩니다.";
+                }
+            };
+            
+            
+            let customer1 = new FreeShipping(50000000);
+            let customer2 = new FreeShipping(5000);
+            
+            console.log(customer1);
+            console.log(customer2);
+            
+            console.log(customer1.getCustomer);
+            console.log(customer2.getCustomer);            
+            
+        </script>
+    </body>
+</html>

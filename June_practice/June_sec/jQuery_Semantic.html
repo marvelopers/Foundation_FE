@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <mete charset="utf-8">
+            <style>
+            <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+            <script
+              src="https://code.jquery.com/jquery-3.1.1.min.js"
+              integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+              crossorigin="anonymous"></script>
+            <script src="./lib/Semantic-UI-CSS-master.semantic.min.js"></script>
+                </style>
+    </head>
+    <body>
+        
+        <!--    Modal    -->
+        <div class="ui modal profile">
+            <i class="close icon"></i>
+            <div class="header">
+                Profile Picture
+            </div>
+            <div class="image content">
+                <div class="ui medium image">
+                  <img src="/images/avatar/large/chris.jpg">
+                </div>
+                <div class="description">
+                  <div class="ui header">We've auto-chosen a profile image for you.</div>
+                  <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                  <p>Is it okay to use this photo?</p>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ui black deny button">
+                  Nope
+                </div>
+                <div class="ui positive right labeled icon button">
+                  Yep, that's me
+                  <i class="checkmark icon"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ui secondary pointing menu">
+          <a class="item active">
+            Home
+          </a>
+          <a class="item">
+            Messages
+          </a>
+          <a class="item">
+            Friends
+          </a>
+          <div class="right menu">
+            <a class="ui item">
+              Logout
+            </a>
+          </div>
+        </div>
+        <div class="ui segment">
+          <p></p>
+        </div>
+        $('.ui.modal')
+        .modal('show')
+        ;
+        <script>
+            //modal show
+            $("#showModal").click(function(){
+              //실행문
+                $('.ui.modal.profile').modal('show');
+            })            
+        </script>
+    </body>
+ </html>
+    

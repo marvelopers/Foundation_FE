@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # JavaScript
 
 ## 1.JavaScript
@@ -252,3 +253,10 @@ const f2 = name => `Hello, ${name}`;
 ## JavaScript_base
 # HTML
 # CSS
+=======
+# temp
+
+#### JS 함수 연습 및 테스트 파일
+
+####
+>>>>>>> Foundation_FE/master
